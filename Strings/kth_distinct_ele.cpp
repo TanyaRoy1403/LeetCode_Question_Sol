@@ -5,6 +5,11 @@
 #include<unordered_map>
 using namespace std;
 
+/*Given an array of strings arr, and an integer k, return the kth distinct string present in arr. 
+If there are fewer than k distinct strings, return an empty string "".
+
+Note that the strings are considered in the order in which they appear in the array.*/
+
 string solve(vector<string>&arr,int k){
 
     unordered_set<string>st;
