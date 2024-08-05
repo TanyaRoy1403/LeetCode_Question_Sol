@@ -24,6 +24,7 @@ string solve(vector<string>&arr,int k){
     int count = 0;
     for (const auto& elem : st) {
         if (++count == k) {
+            
             return elem;
         }
     }
@@ -32,7 +33,7 @@ string solve(vector<string>&arr,int k){
 }
 
 string solve2(vector<string>&arr,int k){
-    
+
     unordered_map<string,int>mp;
 
         for(auto &ch:arr){
