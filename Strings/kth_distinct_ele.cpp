@@ -2,6 +2,7 @@
 #include<string>
 #include<vector>
 #include<unordered_set>
+#include<unordered_map>
 using namespace std;
 
 string solve(vector<string>&arr,int k){
@@ -28,6 +29,25 @@ string solve(vector<string>&arr,int k){
     }
 
     return "";
+}
+
+string solve2(vector<string>&arr,int k){
+    
+    unordered_map<string,int>mp;
+
+        for(auto &ch:arr){
+            mp[ch]++;
+        }
+        for(auto &it:arr){
+            if(mp[it]==1){
+                k--;
+            }
+        
+          if(k==0){
+               return it;
+            }
+        }
+        return "";
 }
 int main(){
     vector<string>arr={"d","b","c","b","c","a"};
