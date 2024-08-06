@@ -62,6 +62,36 @@ Node* odd_even(Node* &head){
     odd->next=evenkaStart;
     return head;
 }
+
+Node* odd_even_brute(Node* &head){
+    if(head==NULL){
+        return head;
+    }
+    Node* oddDummy=new Node(0); //dummy node to point odd wala ka head
+    Node* evenDummy=new Node(0); //dummy node to pint even wala ka head;
+    Node* oddpointer=oddDummy; //ek pointer jo odd wala part ko point krega or sath hi sath head ko v odd wala ka
+    Node* evenpointer=evenDummy;
+    Node* curr=head;  //current node
+    int index=1;
+    while(curr!=NULL){
+        if(index%2!=0){
+            oddpointer->next=curr;
+            oddpointer=oddpointer->next;
+        }else{
+            evenpointer->next=curr;
+            evenpointer=evenpointer->next;
+        }
+        curr=curr->next;
+        index++;
+    }
+     // Combine the odd-indexed list with the even-indexed list
+    oddpointer->next = evenDummy->next;
+    evenpointer->next = NULL;
+    Node* newHead=oddDummy->next;
+    delete oddDummy;
+    delete evenDummy;
+    return newHead;
+}
 int main(){
     Node* head=NULL;
     insert_end(1,head);
@@ -71,6 +101,6 @@ int main(){
     insert_end(5,head);
     printll(head);
     cout<<endl;
-    head=odd_even(head);
+    head=odd_even_brute(head);
     printll(head);
 }
