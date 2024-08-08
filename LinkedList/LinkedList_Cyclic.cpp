@@ -38,7 +38,7 @@ Node* insert_end(int value,Node*& head){
 
 /*--------------------//^Brute force ,finding starting node  from where cycle is started----------------------------------*/
 Node* cyclic_LL(Node* &head){
-    unordered_set<Node*>visited;
+    unordered_set<Node*>visited;  //set to keep track of node only
   
     Node* temp=head;
     while(temp!=NULL){
@@ -69,6 +69,12 @@ int cyclic_LL2(Node* &head){
     return -1;
 }
 
+/*//^--------------------optimal solution (slow and fast pointer)------------------------------------------*/
+//node return krna h
+
+Node* detect_cycle(Node* &head){
+    
+}
 int main(){
     Node* head=NULL;
     insert_end(3,head);
