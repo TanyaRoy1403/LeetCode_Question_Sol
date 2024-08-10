@@ -42,7 +42,7 @@ int getLength(Node* head) {
   }
   return len;
 }
-
+/*//*------------------------Brute force---------------------------------------------------------*/
 Node* slove(Node*& head,int k){
     int len=getLength(head);
     if(head==NULL){
@@ -64,6 +64,32 @@ Node* slove(Node*& head,int k){
   
     return head;
 }
+/*//*----------------------------------optimal solution-----------------------------------------*/
+Node* swap_kth(Node*& head,int k){
+    //empty one node
+    if(head==NULL||head->next==NULL){
+        return head;
+    }
+    Node* first=NULL;
+    Node* second=NULL;
+    Node* temp=head;
+
+    while(temp!=NULL){
+        if(second!=NULL){
+            second=second->next;
+        }
+        k--;
+        if(k==0){
+        first=temp;
+         //ab second ko active kro
+        second=head;
+        }
+       
+        temp=temp->next;
+    }
+    swap(first->data,second->data);
+    return head;
+}
 int main(){
     Node* head=NULL;
     insert_end(5,head);
@@ -73,6 +99,6 @@ int main(){
     insert_end(9,head);
     insert_end(3,head);
     int k=2;
-    slove(head,k);
+    swap_kth(head,k);
     printll(head);
 }

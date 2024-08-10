@@ -73,8 +73,57 @@ int cyclic_LL2(Node* &head){
 //node return krna h
 
 Node* detect_cycle(Node* &head){
-    
+    //empty  ya one node
+    if(head==NULL ||head->next==NULL){
+        return head;
+    }
+    Node* startingNodeCycle=head;
+    Node* slow=head;
+    Node* fast=head;
+    while(fast!=NULL&&fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+        //agr cycle mil gya 
+        if(slow==fast){
+            while(startingNodeCycle!=slow){
+                startingNodeCycle=startingNodeCycle->next;
+                slow=slow->next;
+            }
+            return startingNodeCycle;
+        }
+    }
+    return NULL;
 }
+/*//^--------------------optimal solution (slow and fast pointer)------------------------------------------*/
+//node ka index return krna h
+
+int detect_cycle2(Node* &head){
+    //empty  ya one node
+    if(head==NULL ||head->next==NULL){
+        return -1;
+    }
+    Node* startingNodeCycle=head;
+    Node* slow=head;
+    Node* fast=head;
+    int indx=0;
+    int startingindex=0;
+    while(fast!=NULL&&fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+        indx++;
+        //agr cycle mil gya 
+        if(slow==fast){
+            while(startingNodeCycle!=slow){
+                startingNodeCycle=startingNodeCycle->next;
+                slow=slow->next;
+                startingindex++;
+            }
+            return startingindex;
+        }
+    }
+    return -1;
+}
+
 int main(){
     Node* head=NULL;
     insert_end(3,head);
@@ -82,7 +131,15 @@ int main(){
     insert_end(0,head);
     insert_end(4,head);
     head->next->next->next->next = head->next;
+    // Node* newHead=detect_cycle(head);
+    // if(newHead!=NULL){
+    //     cout<<"cycle detected at node:"<<newHead->data<<endl;
+    // }else{
+    //     cout<<"Cycle not detected"<<endl;
+    // }
+    int ans=detect_cycle2(head);
+    cout<<ans;
 
-    int cycleIndex = cyclic_LL2(head);
-    cout<<cycleIndex;
+
+ 
 }
