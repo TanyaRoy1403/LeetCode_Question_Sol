@@ -94,6 +94,27 @@ Node* detect_cycle(Node* &head){
     }
     return NULL;
 }
+
+//~Remove cycle
+void remove_cycle(Node*& head){
+         Node* cycle_start = detect_cycle(head);
+    
+    if (cycle_start == NULL) {
+        return;  // No cycle detected
+    }
+    
+    Node* temp = cycle_start;
+    
+    // Find the node just before the start of the cycle
+    while (temp->next != cycle_start) {
+        temp = temp->next;
+    }
+    
+    // Break the cycle
+    temp->next = NULL;
+}
+
+
 /*//^--------------------optimal solution (slow and fast pointer)------------------------------------------*/
 //node ka index return krna h
 
@@ -124,6 +145,14 @@ int detect_cycle2(Node* &head){
     return -1;
 }
 
+void printll(Node* head){
+    Node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }
+    cout<<"NULL";
+}
 int main(){
     Node* head=NULL;
     insert_end(3,head);
@@ -131,14 +160,16 @@ int main(){
     insert_end(0,head);
     insert_end(4,head);
     head->next->next->next->next = head->next;
-    // Node* newHead=detect_cycle(head);
-    // if(newHead!=NULL){
-    //     cout<<"cycle detected at node:"<<newHead->data<<endl;
-    // }else{
-    //     cout<<"Cycle not detected"<<endl;
-    // }
-    int ans=detect_cycle2(head);
-    cout<<ans;
+    Node* newHead=detect_cycle(head);
+    if(newHead!=NULL){
+        cout<<"cycle detected at node:"<<newHead->data<<endl;
+    }else{
+        cout<<"Cycle not detected"<<endl;
+    }
+    // int ans=detect_cycle2(head);
+    // cout<<ans;
+    remove_cycle(head);
+    printll(head);
 
 
  
