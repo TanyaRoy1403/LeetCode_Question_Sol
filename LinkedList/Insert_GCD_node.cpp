@@ -26,7 +26,7 @@ Node* insert_end(int value, Node*& head) {
     return head;
 }
 
-void printll(Node* head) {
+void printll(Node* head) { 
     Node* temp = head;
     while (temp != NULL) {
         cout << temp->data << "->";
@@ -50,7 +50,7 @@ Node* insert_gcd_value(Node*& head) {
     Node* curr = head;
     Node* forward = head->next;
     while (forward) {
-        int gcd_value =find_gcd(curr->data, forward->data); 
+        int gcd_value =find_gcd(curr->data, forward->data); //u can use gcd predefine func
         Node* newNode = new Node(gcd_value);
         curr->next = newNode;
         newNode->next = forward;
@@ -69,4 +69,8 @@ int main() {
 
     head = insert_gcd_value(head);
     printll(head);
+}
+int main(){
+    Node* head=NULL;
+    insert_end(6,head);
 }

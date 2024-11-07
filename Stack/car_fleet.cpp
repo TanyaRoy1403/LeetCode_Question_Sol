@@ -23,9 +23,9 @@ int car_fleet(vector<int>&position,vector<int>&speed,int target){
 return st.size();
 }
 int main(){
-    vector<int>position={3};
-    vector<int>speed={3};
-    int target=10;
+    vector<int>position={10,8,0,5,3};
+    vector<int>speed={2,4,1,1,3};
+    int target=12;
     cout<<car_fleet(position,speed,target);
     return 0;
 }

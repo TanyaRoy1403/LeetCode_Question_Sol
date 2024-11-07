@@ -40,7 +40,7 @@ Node* LCAbst(Node* root,Node* p,Node* q){
         return root;
     }
 }
-//binary search ka property lgao or kisi ek side jao sirf
+//binary search ka property lgao or kisi ek side jao sirf  t.c=O(lon n)
 Node* lca_bst(Node* root,Node*  p,Node* q){
     if(root==NULL){
         return NULL;
@@ -88,6 +88,5 @@ int main(){
     } else {
         cout << "No LCA found" << endl;
     }
-
     return 0;
 }

@@ -42,6 +42,7 @@ vector<int> solve(vector<int>&arr,int k){
         ans[i]=avg;
     }
     return ans;
+/*This is kind of brute force method as it takes alot of spaces ...................its optimal sol is in *****SLINDING WINDOW SECTION***-----*/
 }
 int main(){
     vector<int>arr={7,4,3,9,1,8,5,2,6};

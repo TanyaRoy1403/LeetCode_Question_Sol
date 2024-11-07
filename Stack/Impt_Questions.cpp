@@ -55,6 +55,22 @@ void insertBottom(stack<int>&st1,int ele){
         st2.pop();
     }
 }
+//using recursion and backtracking
+void inserAtBottom(stack<int>&st1,int ele){
+    stack<int>st2;
+      //base case
+  if(st1.empty()) {
+    st1.push(ele);
+    return;
+  } 
+  //1 case mera
+  int topE = st1.top();
+  st1.pop();
+  //baaaki rec
+  inserAtBottom(st1,ele);
+  //BT
+  st1.push(topE);
+}
 int main(){
     stack<int>st;
     st.push(1);

@@ -33,7 +33,7 @@ string removeKdigits(string s,int k){
     while(result.size()>0 && result.back()=='0'){
         result.pop_back();
     }
-    std::reverse(result.begin(),result.end());
+    std::reverse(result.begin(),result.end()); //std--> to remove ambiguity
 
     if(result.empty()) {
         return "0";
@@ -41,7 +41,7 @@ string removeKdigits(string s,int k){
     return result;
 }
 int main(){
-    string s="000";
+    string s="10200";
     int k=1;
     cout<<removeKdigits(s,k);
     return 0;

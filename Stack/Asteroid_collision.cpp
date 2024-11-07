@@ -30,7 +30,7 @@ vector<int> asteroidCollision(vector<int>&arr){
         }
     }
     //ab stack se nikalege
-    //reverse krne se acha yeh kro
+    //reverse krne se acha yeh kro 
     int n=st.size();
     vector<int>ans(n);
     int i=n-1;
@@ -41,6 +41,7 @@ vector<int> asteroidCollision(vector<int>&arr){
     }
         return ans;
 }
+
 int main(){
     vector<int>arr={8,-8};
     vector<int>ans=asteroidCollision(arr);

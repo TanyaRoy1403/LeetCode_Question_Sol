@@ -121,6 +121,23 @@ public:
     }
 };
 
+void insertAtBottom(stack<int>& s, int value) {
+  //base case
+  if(s.empty()) {
+    s.push(value);
+    return;
+  }
+  //1 case hum krenge and baaki recursion karega
+  int topElement = s.top();
+  s.pop();
+
+  //baaki recursion
+  insertAtBottom(s,value);
+
+  //backtrack
+  s.push(topElement);
+}
+
 int main() {
     Stack s(5);
     s.push1(10);

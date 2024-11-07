@@ -47,6 +47,22 @@ int solve2(vector<int>&arr){
 return sum;
     
 }
+
+/*-----------------------------------------------optimal solution(using stack)---------------------------------------------------------------*/
+void nextSmallerIdx(vector<int>&arr){
+    //pehele stack me -1 push krege or ises compare krege
+    stack<int>st;
+    st.push(-1);
+    //piche se traverse krege 
+    for(int i=st.size();i>=0;i--){
+        while()
+    }
+
+}
+//stack to store next and prev smaller ele ka index
+int sum_min(vector<int>&arr){
+
+}
 int main(){
     vector<int>arr={11,81,94,43,3};
     cout<<solve2(arr);

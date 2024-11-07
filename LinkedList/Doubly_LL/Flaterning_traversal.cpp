@@ -57,12 +57,12 @@ Node *flattenEnd(Node *head){
    Node *fp = head, *next;
    while (fp)
    {
-       next = fp->next;
-       if (fp->bottom)
+       next = fp->next;  //pointer jo main list ke next ko store krega jb uske prev node ka koi child mil jayega tb
+       if (fp->bottom)  //chil h 
        {
            Node *end = flattenEnd(fp->bottom);
-           fp->next = fp->bottom;
-           fp->next->prev = fp;
+           fp->next = fp->bottom; // main list se link kr rha chil ko straight me
+           fp->next->prev = fp; 
            fp->bottom = NULL;
            fp = end;
            fp->next = next;

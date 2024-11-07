@@ -21,7 +21,7 @@ vector<int> solveBruteForce(vector<int>&arr){
     }
   return ans;
 }
-//optimal solution
+//optimal solution -->next greater ka index wal h type h
 void nextGreatereleIndex(vector<int>&arr,vector<int>&nextAns){
     stack<int>st;
     st.push(arr.size());
@@ -33,7 +33,7 @@ void nextGreatereleIndex(vector<int>&arr,vector<int>&nextAns){
         if(st.top() == arr.size()) {
             nextAns[i] = 0;  // No warmer day
         } else {
-            nextAns[i] = st.top() - i;  // Calculate the difference in indices
+            nextAns[i] = st.top() - i;  // Calculate the difference in indices this will give length of consecutive days i.e number of days
         }
         st.push(i);
     }
@@ -50,10 +50,10 @@ int main(){
         cout<<ch<<" ";
     }
     cout<<endl;
-
     vector<int>ans1=solveOptimal(arr);
     for(auto&ch:ans1){
         cout<<ch<<" ";
     }
+    
     return 0;
 }

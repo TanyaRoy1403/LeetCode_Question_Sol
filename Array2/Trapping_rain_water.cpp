@@ -21,7 +21,7 @@ vector<int> get_right_max(vector<int>&height,int n){
 }
 int rain_water(vector<int>&height){
     int n=height.size();
-    int area=0;
+    int area=0;     
     int width=1;
 
     vector<int>left_max=get_left_max(height,n);
@@ -38,4 +38,5 @@ int rain_water(vector<int>&height){
 int main(){
     vector<int>height={0,1,0,2,1,0,1,3,2,1,2,1};
     cout<<rain_water(height);
+    
 }

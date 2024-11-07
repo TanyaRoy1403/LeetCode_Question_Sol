@@ -69,7 +69,7 @@ Node* remove_sum_zero(Node*& head){
                   mp.erase(curr_preSum);
                 }
                 //bache hue to link kr do
-                start->next=head->next;  //kyu head ek delted node pe khda h non dlete node se ek phle
+                start->next=head->next;  //kyu head ek delted node pe khda h non dlete node se ek phle(head negative no pe khda hoga)
             }
         }else{  //nhi mila to map me add kr do
             mp[pre_sum]=head;

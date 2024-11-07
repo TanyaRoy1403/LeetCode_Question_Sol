@@ -3,6 +3,7 @@
 #include<bitset>
 using namespace std;
 
+/*-------------------------------------------------------Brute force------------------------------------------------------*/
 // Function to convert decimal numbers to binary strings
 vector<string> decimal_binar(const vector<int>& arr) {
     vector<string> ans;  // Store binary numbers as strings
@@ -29,7 +30,23 @@ vector<int> solve(const vector<string>& arr, const vector<vector<int>>& que) {
     
     return result;
 }
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------optimal solution----------------------------------------------------------------------*/
 
+
+vector<int> xorQueries(vector<int>& arr, vector<vector<int>>& queries) {
+        vector<int> result;
+        // Process each query
+        for (const auto& q : queries) {
+            int xorSum = 0;
+            // Calculate XOR for the range [q[0], q[1]]
+            for (int i = q[0]; i <= q[1]; i++) {
+                xorSum ^= arr[i];
+            }
+            result.push_back(xorSum);
+        }
+        return result;
+}
 int main() {
     vector<int> arr = {1, 2, 3, 4};  // Example input
     vector<string> binaryArr = decimal_binar(arr);  // Convert to binary strings

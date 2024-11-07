@@ -17,7 +17,7 @@ vector<int>result(8,0);
             n -= mapping[i];
         }
     }
-    return result;
+    return result;   
 }
 vector<int> solve(int n){
     vector<int>ans;

@@ -15,8 +15,7 @@ or false otherwise.*/
 bool solve_brute(vector<int>&pushed,vector<int>&popped,stack<int>&st,int i,int j){
     int m=pushed.size();  //size same hona chaiye pushed or popped ka
     //base case
-    if(i==m&&j==m){
-        //initially stack must be empty
+    if(i==m&&j==m){ //reach at the end
         return st.empty();
     }
     //har ele ke pass do option h 
@@ -41,7 +40,11 @@ bool solve_brute(vector<int>&pushed,vector<int>&popped,stack<int>&st,int i,int j
         st.push(store);
      }
      return false;
+/*Time complexity:O(2 ka power m)----
+-----space comlexity:O(m)------------------------*/
 }
+
+
 bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {
         stack<int> st;
         return solve_brute(pushed, popped, st, 0, 0);

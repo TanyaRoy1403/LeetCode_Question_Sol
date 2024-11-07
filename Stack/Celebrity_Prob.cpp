@@ -57,6 +57,18 @@ int cele_find(vector<vector<int>>&arr){
     //verify kro ki ye hi celeb h ki nhi
     //condition, isi finalTop ke row ka sum 0 hoga and col ka sum=n-1 hoa tb hi celeb hoga yeh
 
+/*-----------------------------itna ke jgh (verification) yeh v kr skte the-----------------------------*/
+//   for (int i = 0; i < n; i++) {
+//         if (i != finalTop) {
+//             if (isknow(finalTop, i, arr) || !isknow(i, finalTop, arr)) {
+//                 return -1; // Not a celebrity
+//             }
+//         }
+//     }
+
+//     return finalTop;
+/*------------------------------------------------------------------------------------------------------------------*/
+
     int rowSum=0,Colsum=0;
     for(int i=0;i<n;i++){
         rowSum+=arr[finalTop][i]; //row to same h but col change ho rha h
