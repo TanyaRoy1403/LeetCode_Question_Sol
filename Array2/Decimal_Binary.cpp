@@ -28,10 +28,22 @@ vector<int> solve(int n){
     reverse(ans.begin(),ans.end());
     return ans;
 }
+int binaryToDecimal(vector<int>& arr) {
+    int result = 0;
+    int base = 1; // 2^0 initially
+    for (int i = arr.size() - 1; i >= 0; i--) {
+        result += arr[i] * base;
+        base *= 2; // Move to the next power of 2
+    }
+        return result;
+}
 int main(){
     int n=10;
     vector<int>ans=decimal_to_binary(n);
     for(auto &ch:ans){
         cout<<ch;
     }
+    cout<<endl;
+    cout<<binaryToDecimal(ans);
+    return 0;
 }
