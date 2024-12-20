@@ -98,7 +98,10 @@ vector<int> BottomView(Node* root){
         int hd=temp.second;
         max_dist=max(max_dist,hd);
         min_dist=min(min_dist,hd);
-        distMap[hd]=fronNode;
+        if (distMap.find(hd) == distMap.end()) {
+          distMap[hd] = fronNode;
+    }
+
         if(fronNode->left!=NULL){
             q.push(make_pair(fronNode->left,hd-1));
         }if(fronNode->right!=NULL){

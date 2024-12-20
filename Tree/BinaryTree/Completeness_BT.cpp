@@ -1,5 +1,5 @@
 #include<iostream>
-#include<vector>
+#include<queue>
 using namespace std;
 
 class Node{
@@ -13,3 +13,9 @@ class Node{
         right=NULL;
     }
 };
+bool solve(Node*root){
+    if(root==NULL){
+        return true;
+    }
+    
+}

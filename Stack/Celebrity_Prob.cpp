@@ -60,7 +60,7 @@ int cele_find(vector<vector<int>>&arr){
 /*-----------------------------itna ke jgh (verification) yeh v kr skte the-----------------------------*/
 //   for (int i = 0; i < n; i++) {
 //         if (i != finalTop) {
-//             if (isknow(finalTop, i, arr) || !isknow(i, finalTop, arr)) {
+//             if (isknows(finalTop, i, arr) || !isknow(i, finalTop, arr)) {
 //                 return -1; // Not a celebrity
 //             }
 //         }

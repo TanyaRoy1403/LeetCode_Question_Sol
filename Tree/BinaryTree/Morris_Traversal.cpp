@@ -59,12 +59,7 @@ void InOrder(Node* root){
         }
     }
 }
-// void postOrdere(Node* root){
-//     if(root==NULL){
-//         return ;
-//     }
-//     //postOrder == reverse of NRL
-// }
+
    vector<int> postOrder(Node* root) {
         // code here
         vector<int>ans;

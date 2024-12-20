@@ -30,7 +30,7 @@ void prevSmallIndex(vector<int>&heights,vector<int>&prevAns){
         while(s.top()!=-1&&heights[s.top()]>=currele){
             s.pop();
         }
-        prevAns[i]=s.top();
+        prevAns[i]=s.top(); 
         s.push(i);  //index store kr rhe h
     }
 }
