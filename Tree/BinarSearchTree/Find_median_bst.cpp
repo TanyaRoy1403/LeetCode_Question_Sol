@@ -12,7 +12,7 @@ class Node{
         right=NULL;
     }
 };
-
+//moris tarversal
 int countNode(Node*root){
     if(root==NULL){
         return 0;

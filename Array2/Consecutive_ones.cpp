@@ -1,6 +1,8 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+// LeetCode Problem: Max Consecutive Ones
+// Given a binary array, find the maximum number of consecutive 1s in the array.
 //concept-->count and reset 
 int count_ones(vector<int>&arr){
     int count=0;
