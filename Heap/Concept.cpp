@@ -15,13 +15,13 @@ public:
         index = 0;
     }
 
-    // Print heap elements
-    // void printHeap() {
-    //     for (int i = 1; i <= index; i++) {
-    //         cout << arr[i] << " ";
-    //     }
-    //     cout << endl;
-    // }
+    //Print heap elements
+    void printHeap() {
+        for (int i = 1; i <= index; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
 
     // Insert a new value into the heap
     void insert(int val) {

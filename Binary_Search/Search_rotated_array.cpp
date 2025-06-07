@@ -30,7 +30,7 @@ int binarySearch(int s,int e,int target,vector<int>&arr){
             e=mid-1;
         }
     }
-    return -1;
+    return -1; 
 }
 int search(vector<int>&nums,int target){
     int pivotIndex=pivotInx(nums);

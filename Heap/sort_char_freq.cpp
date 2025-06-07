@@ -47,5 +47,4 @@ int main(){
     string s="cccaaa";
     cout<<solve(s);
     return 0;
-
 }
