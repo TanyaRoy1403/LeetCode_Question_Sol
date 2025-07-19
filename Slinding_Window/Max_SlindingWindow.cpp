@@ -38,7 +38,6 @@ vector<int> solve(vector<int>&nums,int k){
         ans.push_back(pq.top().first);
     }
     return ans;
-
 }
 int main(){
     vector<int>nums={1,3,-1,-3,5,3,6,7};
@@ -60,5 +59,3 @@ int main(){
 // The outer while loop runs (n-k+1) times, and the inner for loop runs k times for each iteration of the outer loop.
 // Hence, the overall time complexity is O(n*k).
 // Space Complexity: O(1)
-
-

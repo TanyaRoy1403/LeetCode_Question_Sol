@@ -60,6 +60,7 @@ vector<int> getBiggestThree(vector<vector<int>>& grid) {
     }
 
 
+//yeh jada optimise nhi h  ..optimisee solution hoga jb hm prefixsum ka use kryege diagonols ka sum krhne ke liye 
 
 int main(){
     vector<vector<int>>grid={{3,4,5,1,3},{3,3,4,2,3},{20,30,200,40,10},{1,5,5,4,1},{4,3,2,2,5}};
